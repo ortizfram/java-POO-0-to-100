@@ -16,11 +16,12 @@ public class CuentaBancaria {
     String CBU;
     String alias;
     double saldo;
+//----------------------------------------METHODS----
 
     void mostrarEstado() {
         System.out.println("\n");
         System.out.println("---Estado de Cuenta: ----------");
-        System.out.println(alias + "\n" + CBU + "\n" + saldo);
+        System.out.println("alias: "+alias + "\n" + "CBU: "+CBU + "\n" + "saldo: $"+saldo);
         System.out.println("\n");
     }
 
@@ -30,27 +31,36 @@ public class CuentaBancaria {
         return saldo;
     }
 
+    boolean saldoDisponible (double monto) {
+        return saldo >= monto;
+    }
+    
+//    si monto menor 0 retorna 0, sino retorna monto
     double introducirMonto() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Introduce el monto: ");
         double monto = scanner.nextDouble();
-        return monto;
+        if (monto >= 0) {
+            return monto;
+        } else {
+            System.out.println("ERROR: monto introducido menor a 0");
+            return 0.0; // valor de retorno predeterminado
+        }
     }
 
-    double depositar(double saldo) {
+    void depositar(double monto) {
         System.out.println("---Depositar: ---------");
         introducirMonto();
-        System.out.println("");
-        if (monto >=) {
-            saldo += monto;
-        }
-        return saldo;
+        saldo += monto;
+        System.out.println("'se han depositado: $" + monto + "'");
+
     }
 
-    double saldoDisponible(double monto) {
-        if (saldo >= monto) {
-            return saldo;
-        }
+    void extraer(double monto) {
+        System.out.println("---Extraer: ---------");
+        introducirMonto();
+        saldo -= monto;
+        System.out.println("'se han extraido: $" + monto + "'");
 
     }
 

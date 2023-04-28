@@ -22,6 +22,7 @@ public class Main {
         cb.saldo = 0;
 
 //        llamando funcion
+
         cb.mostrarEstado();
 
         cb.depositar(200);
