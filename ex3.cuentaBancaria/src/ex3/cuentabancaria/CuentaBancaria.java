@@ -4,17 +4,19 @@
  */
 package ex3.cuentabancaria;
 
+import java.util.Scanner;
+
 /**
  *
  * @author User
  */
 public class CuentaBancaria {
+// declare variables
 
     String CBU;
     String alias;
     double saldo;
 
-    //       metodo:  mostrar estado
     void mostrarEstado() {
         System.out.println("\n");
         System.out.println("---Estado de Cuenta: ----------");
@@ -22,36 +24,34 @@ public class CuentaBancaria {
         System.out.println("\n");
     }
 
-    //       metodo:  mostrar saldo
     double getSaldo() {
         System.out.println("\n");
         System.out.println("---Saldo de Cuenta: ----------");
         return saldo;
     }
 
-    //       metodo:  deopositar
-    //    no retorna nada entonces void
-    //    pasar por param el monto y categoria del dato
-    void depositar(double monto) {
-        if (monto > 0) {
-            System.out.println("monto ingresado: $"+monto);
+    double introducirMonto() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduce el monto: ");
+        double monto = scanner.nextDouble();
+        return monto;
+    }
+
+    double depositar(double saldo) {
+        System.out.println("---Depositar: ---------");
+        introducirMonto();
+        System.out.println("");
+        if (monto >=) {
             saldo += monto;
-        } else {
-            System.out.println("voy a extraer : $"+monto);
-            System.out.println("saldo introducido $"+monto+" menor a $0");
         }
+        return saldo;
     }
-    
-    boolean saldoDisponible(double monto){
-        System.out.println("saldo disponible para retiro $"+monto+ " ? :");
-        return saldo >= monto;
-    }
-    
-    void extraer(double monto){
-        if(saldoDisponible(monto)) {
-            System.out.println("extrayendo monto: ...");
-            saldo -= monto;
-            System.out.println("saldo : $"+saldo);
+
+    double saldoDisponible(double monto) {
+        if (saldo >= monto) {
+            return saldo;
         }
+
     }
+
 }
