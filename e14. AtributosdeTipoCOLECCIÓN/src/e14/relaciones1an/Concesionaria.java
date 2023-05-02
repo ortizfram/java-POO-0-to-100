@@ -28,8 +28,14 @@ public class Concesionaria {
         if (autos.isEmpty()) {
             System.out.println("No hay autos");
         } else {
-            for (int i = 0; i < autos.size(); i++) {
-                System.out.println(autos.get(i));
+//            for (int i = 0; i < autos.size(); i++) {
+//                Auto a = autos.get(i);
+//                System.out.println(a);
+//            }
+
+// FOR EACH
+              for (Auto a : autos) {
+                  System.out.println(a);
             }
         }
     }
