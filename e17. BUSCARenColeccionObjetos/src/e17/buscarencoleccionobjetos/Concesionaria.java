@@ -28,53 +28,19 @@ public class Concesionaria {
         return autos.size();
     }
 
-    public Auto autoMasKmsRecorridos() {
-        Auto autoMax = null;
-        int kmsMax = -1;
-        for (Auto auto : autos) {
-            if (auto.getKmsRecorridos() > kmsMax) {
-                kmsMax = auto.getKmsRecorridos();
-                autoMax = auto;
-            }
-        }
-        return autoMax;
-    }
-
-    public ArrayList<Auto> autosMasKmsRecorridos() {
-        ArrayList<Auto> listaDeMaximos = new ArrayList<>();
-        int kmsMax = -1;
-        for (Auto auto : autos) {
-            if (auto.getKmsRecorridos() == kmsMax) {
-                listaDeMaximos.add(auto);
-            } else if (auto.getKmsRecorridos() > kmsMax) {
-                kmsMax = auto.getKmsRecorridos();
-                listaDeMaximos.clear();
-                listaDeMaximos.add(auto);
-            }
-        }
-        return listaDeMaximos;
-    }
-
     public Auto buscarAuto(String patente) {
-        Auto autoencontrado = null;
-        for (Auto a : autos) {
+        Auto autoEncontrado = null;
+        int i = 0;
+        while (i < cantAutos() && autoEncontrado == null) {
+            Auto a = this.autos.get(i); 
+            System.out.println("Checking auto: " + a.getPatente() + "...");
             if (a.getPatente().equalsIgnoreCase(patente)) {
-                autoencontrado = a;
+                autoEncontrado = a;
+                break;
             }
+            i++;
         }
-        return autoencontrado;
-    }
-
-    public Auto autoMenosKmsRecorridos() {
-        Auto autoMin = null;
-        int kmsMin = Integer.MAX_VALUE;
-        for (Auto auto : autos) {
-            if (auto.getKmsRecorridos() < kmsMin) {
-                kmsMin = auto.getKmsRecorridos();
-                autoMin = auto;
-            }
-        }
-        return autoMin;
+        return autoEncontrado;
     }
 
 }
