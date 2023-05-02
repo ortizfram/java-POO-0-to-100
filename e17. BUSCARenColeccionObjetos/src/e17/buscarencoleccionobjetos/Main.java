@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package e16.maxmincoleccionobjetos;
+package e17.buscarencoleccionobjetos;
 
 /**
  *
@@ -23,10 +23,13 @@ public class Main {
         c.agregarAuto(new Auto("DEF458", "Blanco", 4000));
         c.agregarAuto(new Auto("CDE345", "Azul", 3000));
         c.agregarAuto(new Auto("DEF457", "Gris", 4000));
-
-        System.out.println("Autos con mayor cant de kms recorridos: " + c.autosMasKmsRecorridos());
-        //System.out.println("Auto con menor cant de kms recorridos: " + c.autoMenosKmsRecorridos());
-
+    
+        Auto a = c.buscarAuto("BCD234");
+        if (a == null) {
+            System.out.println("***No se encontro");
+        } else {
+            System.out.println("***Se encontro: "+ a);
+        }
     }
-
+    
 }

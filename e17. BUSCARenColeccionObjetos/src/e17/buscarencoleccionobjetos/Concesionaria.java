@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package e16.maxmincoleccionobjetos;
+package e17.buscarencoleccionobjetos;
 
 import java.util.ArrayList;
 
@@ -40,26 +40,6 @@ public class Concesionaria {
         return autoMax;
     }
 
-    /*private int maxKmsRecorridos() {
-        int kmsMax = -1;
-        for (Auto auto : autos) {
-            if (auto.getKmsRecorridos() > kmsMax) {
-                kmsMax = auto.getKmsRecorridos();
-            }
-        }
-        return kmsMax;
-    }
-
-    public ArrayList<Auto> autosMasKmsRecorridos() {
-        ArrayList<Auto> listaDeMaximos = new ArrayList<>();
-        int kmsMax = maxKmsRecorridos();
-        for (Auto auto : autos) {
-            if (auto.getKmsRecorridos() == kmsMax) {
-                listaDeMaximos.add(auto);
-            }
-        }
-        return listaDeMaximos;
-    }*/
     public ArrayList<Auto> autosMasKmsRecorridos() {
         ArrayList<Auto> listaDeMaximos = new ArrayList<>();
         int kmsMax = -1;
@@ -73,6 +53,16 @@ public class Concesionaria {
             }
         }
         return listaDeMaximos;
+    }
+
+    public Auto buscarAuto(String patente) {
+        Auto autoencontrado = null;
+        for (Auto a : autos) {
+            if (a.getPatente().equalsIgnoreCase(patente)) {
+                autoencontrado = a;
+            }
+        }
+        return autoencontrado;
     }
 
     public Auto autoMenosKmsRecorridos() {
