@@ -5,6 +5,7 @@
 package e17.buscarencoleccionobjetos;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -30,15 +31,12 @@ public class Concesionaria {
 
     public Auto buscarAuto(String patente) {
         Auto autoEncontrado = null;
-        int i = 0;
-        while (i < cantAutos() && autoEncontrado == null) {
-            Auto a = this.autos.get(i); 
-            System.out.println("Checking auto: " + a.getPatente() + "...");
+        Iterator<Auto> it = this.autos.iterator();
+        while (it.hasNext() && autoEncontrado == null) {
+            Auto a = it.next();
             if (a.getPatente().equalsIgnoreCase(patente)) {
                 autoEncontrado = a;
-                break;
             }
-            i++;
         }
         return autoEncontrado;
     }
