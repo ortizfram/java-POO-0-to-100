@@ -1,0 +1,18 @@
+<diagram program="umletino" version="15.1"><zoom_level>12</zoom_level><element><id>UMLClass</id><coordinates><x>564</x><y>156</y><w>216</w><h>96</h></coordinates><panel_attributes>Sucursal
+--
+- nombre: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>228</x><y>144</y><w>144</w><h>96</h></coordinates><panel_attributes>Fabrica</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>204</y><w>228</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+m1=*
+sucursales</panel_attributes><additional_attributes>170;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>552</x><y>408</y><w>264</w><h>96</h></coordinates><panel_attributes>Instrumento
+--
+- ID: String
+- precio: double</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>684</x><y>240</y><w>120</w><h>192</h></coordinates><panel_attributes>lt=&lt;-
+m1=*
+intrumentos</panel_attributes><additional_attributes>10;140;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>252</x><y>408</y><w>144</w><h>132</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+TipoInstrumento
+--
+_+PERCUSION_
+_+VIENTO_
+_+CUERDA_
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>384</x><y>444</y><w>192</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+m1=*
+- tipo</panel_attributes><additional_attributes>10;20;140;20</additional_attributes></element></diagram>
