@@ -34,12 +34,28 @@ public class Sucursal {
         return insEncontrado;
     }
 
-    public String getNombre() {
-        return nombre;
+    public double[] porcInstrumentosPorTipo() {
+        final int CANT_INSTRUMENTOS = TipoInstrumento.values().length;
+        double[] porcentajes = new double[CANT_INSTRUMENTOS];
+        for (Instrumento instrumento : instrumentos) {
+            porcentajes[instrumento.getTipo().ordinal()]++;
+        }
+        absolutoAPorcentaje(porcentajes);
+        return porcentajes;
     }
 
-    public void agregarInstrumentos(Instrumento ins) {
+    private void absolutoAPorcentaje(double[] porcentajes) {
+        for (int i = 0; i < porcentajes.length; i++) {
+            porcentajes[i] = (porcentajes[i] * 100) / instrumentos.size();
+        }
+    }
+
+    public void agregarInstrumento(Instrumento ins) {
         this.instrumentos.add(ins);
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 
     public void listarInstrumentos() {
@@ -57,8 +73,4 @@ public class Sucursal {
         }
         return instEncontrados;
     }
-
-//    public Instrumento borrarInstrumento(String ID){
-//        
-//    }
 }
