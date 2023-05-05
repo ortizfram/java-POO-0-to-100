@@ -24,6 +24,16 @@ public class Fabrica {
             sucursal.listarInstrumentos();
         }
     }
+    public Instrumento borrarInstrumento(String ID){
+        
+        Instrumento borrado = null;
+        int i = 0;
+        while (i < sucursales.size() && borrado == null){
+            if ()
+            i++;
+    }
+        return borrado;
+    }
 
     public ArrayList<Instrumento> instrumentosPorTipo(TipoInstrumento tipo) {
         ArrayList<Instrumento> instEncontrados = new ArrayList<>();

@@ -23,6 +23,7 @@ public class Sucursal {
     public void agregarInstrumentos(Instrumento ins) {
         this.instrumentosColl.add(ins);
     }
+    
 
     public void listarInstrumentos() {
         for (Instrumento instrumento : instrumentosColl) {
@@ -39,4 +40,8 @@ public class Sucursal {
         }
         return instEncontrados;
     }
+    
+//    public Instrumento borrarInstrumento(String ID){
+//        
+//    }
 }
