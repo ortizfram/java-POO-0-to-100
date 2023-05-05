@@ -25,11 +25,10 @@ public class Fabrica {
         }
     }
     public Instrumento borrarInstrumento(String ID){
-        
         Instrumento borrado = null;
         int i = 0;
         while (i < sucursales.size() && borrado == null){
-            if ()
+            borrado = sucursales.get(i).borrarInstrumento(ID);
             i++;
     }
         return borrado;

@@ -19,7 +19,10 @@ public class Instrumento {
     public TipoInstrumento getTipo() {
         return tipo;
     }
-    
+
+    public String getID() {
+        return ID;
+    }
     
     @Override
     public String toString() {
