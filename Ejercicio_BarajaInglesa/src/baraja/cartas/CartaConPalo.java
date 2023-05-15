@@ -10,7 +10,7 @@ import baraja.Palo;
  *
  * @author User
  */
-public abstract class CartaConPalo extends Carta{
+public abstract class CartaConPalo extends Carta {
 
     private Palo palo;
 
@@ -18,4 +18,15 @@ public abstract class CartaConPalo extends Carta{
         this.palo = palo;
     }
 
+    public Palo getPalo() {
+        /* getter de palo porque atributo es private, 
+    es para overrride en istancia de clase */
+        return palo;
+    }
+
+    @Override
+    public String getRepresentacion() {
+        return " de " + palo;
+
+    }
 }

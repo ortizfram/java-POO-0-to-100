@@ -6,6 +6,7 @@ package baraja;
 
 import baraja.cartas.Carta;
 import baraja.cartas.CartaConPalo;
+import baraja.cartas.CartaFigura;
 import baraja.cartas.CartaJoker;
 import baraja.cartas.CartaNumeral;
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ public class BarajaInglesa {
 
     public void mostrarBaraja() {
         for (Carta carta : cartas) {
+            carta.darVuelta();
             carta.mostrar();
         }
     }
@@ -63,7 +65,7 @@ public class BarajaInglesa {
             Palo paloActual = palos[p];
             for (int i = 0; i < letras.length; i++) {
                 char letraActual = letras[i];
-                this.cartas.add(new CartaNumeral(letraActual, paloActual));
+                this.cartas.add(new CartaFigura(letraActual, paloActual));
             }
         }
     }
