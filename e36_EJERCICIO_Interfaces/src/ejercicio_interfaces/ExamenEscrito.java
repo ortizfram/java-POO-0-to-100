@@ -17,7 +17,7 @@ public class ExamenEscrito extends Examen {
     private int duracion;
     private int nota;
 
-    public ExamenEscrito(String fecha) {
+    public ExamenEscrito(int duracion, int nota, String fecha) {
         super(fecha);
         this.duracion = duracion;
         this.nota = nota;
@@ -25,7 +25,7 @@ public class ExamenEscrito extends Examen {
 
     @Override
     public boolean aprobo() {
-        return true;
+        return nota >= NOTA_APORB && duracion <= MIN_DURACION;
     }
 
 }

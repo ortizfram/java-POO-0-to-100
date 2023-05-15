@@ -31,12 +31,10 @@ public class Alumno implements Aprobable {
     @Override
     public boolean aprobo() {
         int i = 0;
-        while (i < this.examenes.size() &&) {
+        while (i < this.examenes.size() && this.examenes.get(i).aprobo()) {
             i++;
         }
-        return true;
+        return i == this.examenes.size();
     }
-
-}
 
 }

@@ -19,7 +19,7 @@ public class ExamenOral extends Examen {
 
     @Override
     public boolean aprobo() {
-        return true;
+        return nivelSatisfaccion.ordinal() >= NivelSatisfaccion.SUFICIENTE.ordinal();
     }
 
 }
